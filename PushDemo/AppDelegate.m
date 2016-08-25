@@ -24,6 +24,8 @@
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [application registerUserNotificationSettings:settings];
     }
+    //这里要注意下 UIApplicationLaunchOptionsRemoteNotificationKey 为远程推送
+    //UIApplicationLaunchOptionsLocalNotificationKey为本地推送 别忘记修改
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     NSLog(@"localNotif= = %@", localNotif);
     if (localNotif) {
